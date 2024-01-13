@@ -7,6 +7,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "fabric-kotlin-template"
+rootProject.name = "overlayer"
 include("client")
-include("server")
