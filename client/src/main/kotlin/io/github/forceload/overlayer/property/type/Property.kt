@@ -1,4 +1,5 @@
 package io.github.forceload.overlayer.property.type
 
-interface Property<T> {
+open class Property<T>(open var value: T?) {
+    override fun toString(): String = value.toString()
 }
