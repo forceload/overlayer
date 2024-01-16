@@ -23,10 +23,6 @@ object PropertyLoader {
     }
 
     var gameTime = 0.0
-    var frameCounter = 0
-    var targetTime = 0
-
-    var fps = 0
     fun updateProperty(property: PropertyMap<String>, tickDelta: Float) {
         // System Properties
         val processor = GlDebugInfo.getCpuInfo()
@@ -39,15 +35,9 @@ object PropertyLoader {
         // tickDelta 1 = 50ms (1/20s)
         val deltaTime = tickDelta * 50.0
         gameTime += deltaTime
-        frameCounter++
-
-        fps = if (gameTime >= targetTime) {
-            val temp = frameCounter
-            targetTime += 1000; frameCounter = 0; temp
-        } else fps
 
         property["DeltaTime"] = deltaTime
-        property["FPS"] = fps
+        property["FPS"] = OverlayerMod.clientInstance.currentFps
 
         // Memory Information
         loadMemoryInfo(property)
