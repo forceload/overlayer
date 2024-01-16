@@ -5,14 +5,12 @@ import io.github.forceload.overlayer.gui.PositionAnchor
 import io.github.forceload.overlayer.gui.TextAlign
 import io.github.forceload.overlayer.gui.TextDrawUtil.renderText
 import io.github.forceload.overlayer.property.PropertyLoader
-import io.github.forceload.overlayer.property.type.Property
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.DrawContext
-import org.jetbrains.annotations.Debug.Renderer
 
 object OverlayerMod: ModInitializer {
     const val MOD_ID = "overlayer"
@@ -42,7 +40,7 @@ object OverlayerMod: ModInitializer {
                         processorText, x = 0.0f, y = 0.0f, color = 0xffffff, shadow = true
                     )
 
-                    val performanceText = "FPS: ${properties["FPS"]?.formatFloatDigit(2)} " +
+                    val performanceText = "FPS: ${properties["FPS"]} " +
                             "(${properties["DeltaTime"]?.formatFloatDigit(2)}ms)"
 
                     drawContext.renderText(
