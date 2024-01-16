@@ -10,6 +10,7 @@ val fabricLanguageKotlin =
 val yarnBuild = "${project.extra["minecraft_version"] as String}+build.${project.extra["yarn_build"] as String}"
 
 base {
+    version = project.extra["mod_version"] as String
     archivesName = project.extra["archives_base_name"] as String + "-client"
 }
 
