@@ -40,7 +40,7 @@ object OverlayerMod: ModInitializer {
                         processorText, x = 0.0f, y = 0.0f, color = 0xffffff, shadow = true
                     )
 
-                    val performanceText = "FPS: ${properties["FPS"]} " +
+                    val performanceText = "FPS: ${properties["FPS"]?.formatDigit(2, '0')} " +
                             "(${properties["DeltaTime"]?.formatFloatDigit(2)}ms)"
 
                     drawContext.renderText(
