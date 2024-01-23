@@ -29,4 +29,10 @@ object TextDrawUtil {
 
         (this as DrawContextInvoker).invokeTryDraw()
     }
+
+    fun DrawContext.renderText(
+        textRenderer: TextRenderer,
+        align: TextAlign = TextAlign.TOP_LEFT, anchor: PositionAnchor = PositionAnchor.TOP_LEFT,
+        text: FormattedText, x: Float, y: Float, color: Int, shadow: Boolean
+    ) = renderText(textRenderer, align, anchor, text.toString(), x, y, color, shadow)
 }
