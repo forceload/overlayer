@@ -23,12 +23,6 @@ class FormattedText(var text: String, var property: PropertyMap<String> = Proper
     }
 }
 
-private val powCache = arrayOf(
-    1.0, 10.0, 100.0, 1000.0, 10000.0, 100000.0, 1000000.0, 10000000.0, 100000000.0, 1000000000.0,
-    10000000000.0, 100000000000.0, 1000000000000.0, 10000000000000.0, 100000000000000.0, 1000000000000000.0,
-    10000000000000000.0, 100000000000000000.0, 1000000000000000000.0, 10000000000000000000.0, 100000000000000000000.0,
-)
-
 fun String.roundNum(digit: Int): Pair<Boolean, String> = if (digit != 0) {
         var result = this.slice(0 until digit).toBigInteger()
         if (this.length > digit && this[digit].digitToInt() >= 5) result++ // Round Number in Float Part
