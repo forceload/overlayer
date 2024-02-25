@@ -32,14 +32,14 @@ object OverlayerMod: ModInitializer {
                 logger.info("Initial property loaded")
 
                 val processorText = FormattedText("Processor: {Processor}", properties)
-                val performanceText = FormattedText("FPS: {02:FPS} ({03:DeltaTime:2}ms)", properties)
+                val performanceText = FormattedText("FPS: {03:FPS} ({03:DeltaTime:2}ms)", properties)
                 HudRenderCallback.EVENT.register { drawContext: DrawContext, tickDelta: Float ->
                     val textRenderer = clientInstance.textRenderer
                     PropertyLoader.updateProperty(properties, tickDelta)
 
                     drawContext.renderText(
                         textRenderer, TextAlign.TOP_LEFT, PositionAnchor.TOP_LEFT,
-                        processorText, x = 0.0f, y = 0.0f, color = 0xffffff, shadow = true
+                        processorText, x = 1.0f, y = 1.0f, color = 0xffffff, shadow = true
                     )
 
                     /*val performanceText = "FPS: ${properties["FPS"]?.formatDigit(2, '0')} " +
@@ -47,7 +47,7 @@ object OverlayerMod: ModInitializer {
 
                     drawContext.renderText(
                         textRenderer, TextAlign.BOTTOM_LEFT, PositionAnchor.BOTTOM_LEFT,
-                        performanceText, x = 0.0f, y = 0.0f, color = 0xffffff, shadow = true
+                        performanceText, x = 1.0f, y = -1.0f, color = 0xffffff, shadow = true
                     )
                 }
             }
