@@ -67,7 +67,7 @@ subprojects {
     }
 
     dependencies {
-        // testImplementation(kotlin("test"))
+        testImplementation(kotlin("test"))
 
         implementation(kotlin("stdlib"))
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Dependency.Kotlin.Coroutines.VERSION}")
